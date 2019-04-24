@@ -1,15 +1,16 @@
 import React from 'react';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
     <div className="main__header">
       <div className="main__icon">
-        <i className="fa fa-graduation-cap"></i>
+        <i className={`fa ${props.icon}`}></i>
       </div>
       <div className="main__text">
-        <span>BSB10115</span>
-        <span>Certificat I in Business</span>
+        <span>{props.courseName}</span>
+        <span>{props.courseDescription}</span>
       </div>
+      {props.children ? props.children : null}
     </div>
   )
 }
